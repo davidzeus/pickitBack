@@ -68,11 +68,12 @@ module.exports = {
             .then(transactions => res.status(200).send(transactions))
             .catch(error => res.status(400).send(error))
     },
+   
     //busca por id de auto
     find(req, res) {
         return transactions.findAll({
             where: {
-                car_id: req.params.id,
+                car_id: req.params.car_id,
             },
             attributes: { exclude: ['updatedAt', 'createdAt', 'car_id', 'owner_id', 'service_id'] },
             include: [

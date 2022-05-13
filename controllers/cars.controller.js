@@ -50,4 +50,16 @@ module.exports = {
       .then(models => res.status(200).send(models))
       .catch(error => res.status(400).send(error))
   },
+
+  //elimina un auto
+  delete(req, res) {
+    console.log('entro a la funcion')
+    return cars.destroy({
+      where: {
+        id: req.params.id 
+      }
+    })
+      .then(models => res.status(200).send({msj: 'registro eliminado'}))
+      .catch(error => res.status(400).send(error))
+  },
 };

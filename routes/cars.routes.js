@@ -15,6 +15,8 @@ router.get('/find/:manufacturer', Cars.find);
 router.post('/new', Cars.create);
 //actualizar un registro
 router.put('/edit/:id', Cars.update);
+//elimina un registro
+router.delete('/delete/:id', Cars.delete);
 
 
 

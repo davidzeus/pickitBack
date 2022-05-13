@@ -38,6 +38,12 @@ Gonzalez Cristian David
 * [registrar nuevo propietario](#nuevo-propietario)
 * [editar propietario](#editar-propietario)
 
+# Servicios
+* [listar todos los servicios](#listar-servicios)
+* [Buscar por id de propietario](#buscar-por-propietario)
+* [registrar nuevo servicio](#nuevo-servicio)
+
+
 ### listar Autos
 - uri: /api/cars/list
 - method: `'GET'`
@@ -223,6 +229,237 @@ Gonzalez Cristian David
 [
     true
 ]
+```
+## Servicios
+### listar todos los servicios
+- uri: /api/transactions/list
+- method: `'GET'`
+
+- response:
+```json
+[
+    {
+        "id": 1,
+        "status": "ok",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 7,
+            "description": "Revisión General",
+            "price": "5000.30",
+            "createdAt": "2022-05-13T17:49:18.000Z"
+        }
+    },
+    {
+        "id": 2,
+        "status": "ok",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 1,
+            "description": "Cambio de Aceite",
+            "price": "3500.60",
+            "createdAt": "2022-05-13T17:43:31.000Z"
+        }
+    },
+    {
+        "id": 3,
+        "status": "pen",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 2,
+            "description": "Cambio de Filtro",
+            "price": "1220.20",
+            "createdAt": "2022-05-13T17:44:23.000Z"
+        }
+    },
+    {
+        "id": 4,
+        "status": "KO",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 5,
+            "description": "Cambio de Correa",
+            "price": "12100.60",
+            "createdAt": "2022-05-13T17:48:22.000Z"
+        }
+    }
+]
+```
+### buscar servicio por id de auto
+- uri: /api/transactions/find/:car_id
+- method: `'GET'`
+
+- response:
+```json
+[
+    {
+        "id": 1,
+        "status": "ok",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 7,
+            "description": "Revisión General",
+            "price": "5000.30",
+            "createdAt": "2022-05-13T17:49:18.000Z"
+        }
+    },
+    {
+        "id": 2,
+        "status": "ok",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 1,
+            "description": "Cambio de Aceite",
+            "price": "3500.60",
+            "createdAt": "2022-05-13T17:43:31.000Z"
+        }
+    },
+    {
+        "id": 3,
+        "status": "pen",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 2,
+            "description": "Cambio de Filtro",
+            "price": "1220.20",
+            "createdAt": "2022-05-13T17:44:23.000Z"
+        }
+    },
+    {
+        "id": 4,
+        "status": "KO",
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        },
+        "services": {
+            "id": 5,
+            "description": "Cambio de Correa",
+            "price": "12100.60",
+            "createdAt": "2022-05-13T17:48:22.000Z"
+        }
+    }
+]
+```
+### nuevo servicio
+- uri: /api/transactions/new
+- method: `'POST'`
+- headers:
+  - `Accept`: `application/json`
+  - `Content-Type`: `application/json`
+  - body:
+```json
+{
+    "car": 1,
+    "owner": 1,
+    "service": 5,
+    "status": "KO"
+}
+```
+
+- response:
+```json
+{
+    "id": 4,
+    "car_id": 1,
+    "owner_id": 1,
+    "service_id": 5,
+    "status": "KO",
+    "updatedAt": "2022-05-13T18:59:35.057Z",
+    "createdAt": "2022-05-13T18:59:35.057Z"
+}
 ```
 
 

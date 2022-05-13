@@ -10,12 +10,9 @@ router.get('/', (req, res) => res.status(200).send ({
 //lista todos los propietarios
 router.get('/list', transactions.list);
 //buscar por propietarios
-router.get('/find/:id', transactions.find);
+router.get('/find/:car_id', transactions.find);
 //crear nuevo registro
 router.post('/new', transactions.create);
-//actualizar un registro
-//router.put('/edit/:id', transactions.update);
-
 
 
 module.exports = router;

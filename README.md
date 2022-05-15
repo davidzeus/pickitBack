@@ -24,6 +24,12 @@ Gonzalez Cristian David
 
 ## Modo de uso
 
+#######################################################
+####### TODAS LAS PETICIONES NECESITAN TOKEN EN HEADERS.
+####### KEY = miclaveultrasecreta123*
+#######################################################
+
+
 # Autos
 * [listar vehiculos](#listar-Autos)
 * [Buscar por marca](#buscar-por-marca)
@@ -51,6 +57,8 @@ Gonzalez Cristian David
 ### listar Autos
 - uri: /api/cars/list
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -80,6 +88,8 @@ Gonzalez Cristian David
 ### buscar por marca
 - uri: /api/cars/find/:manufacturer
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -102,6 +112,8 @@ Gonzalez Cristian David
 - headers:
   - `Accept`: `application/json`
   - `Content-Type`: `application/json`
+  - `x-token`: `miclaveultrasecreta123*`
+
   - body:
 ```json
 {
@@ -132,6 +144,7 @@ Gonzalez Cristian David
 - headers:
   - `Accept`: `application/json`
   - `Content-Type`: `application/json`
+  - `x-token`: `miclaveultrasecreta123*`
   - body:
 ```json
 {
@@ -154,6 +167,8 @@ Gonzalez Cristian David
 ### listar propietarios
 - uri: /api/owner/list
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -177,6 +192,8 @@ Gonzalez Cristian David
 ### buscar por apellido
 - uri: /api/owner/find/:lastName
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -196,6 +213,7 @@ Gonzalez Cristian David
 - headers:
   - `Accept`: `application/json`
   - `Content-Type`: `application/json`
+  - `x-token`: `miclaveultrasecreta123*`
   - body:
 ```json
 {
@@ -220,6 +238,7 @@ Gonzalez Cristian David
 - headers:
   - `Accept`: `application/json`
   - `Content-Type`: `application/json`
+  - `x-token`: `miclaveultrasecreta123*`
   - body:
 ```json
 {
@@ -238,6 +257,8 @@ Gonzalez Cristian David
 ### listar todos los servicios
 - uri: /api/transactions/list
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -339,6 +360,8 @@ Gonzalez Cristian David
 ### buscar servicio por id de auto
 - uri: /api/transactions/find/:car_id
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -443,6 +466,7 @@ Gonzalez Cristian David
 - headers:
   - `Accept`: `application/json`
   - `Content-Type`: `application/json`
+  - `x-token`: `miclaveultrasecreta123*`
   - body:
 ```json
 {
@@ -468,6 +492,8 @@ Gonzalez Cristian David
 ### listar todos los autos con su respectivo propietario
 - uri: /api/carsOwner/list
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json
@@ -541,6 +567,8 @@ Gonzalez Cristian David
 ### buscar por marca
 - uri: /api/carsOwner/find/:idCar
 - method: `'GET'`
+- headers:
+  - `x-token`: `miclaveultrasecreta123*`
 
 - response:
 ```json

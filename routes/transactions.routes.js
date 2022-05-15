@@ -2,20 +2,18 @@ const { Router } = require('express');
 const  transactions  = require('../controllers/transactions.controller')
 const { check } = require('express-validator');
 const { checkFields } = require('../middlewares/check-fields');
+const { validateJasonWebToken } = require('../middlewares/validate-jwt');
 
 const router = Router();
 
-//ruta de verificacion
-/* router.get('/', (req, res) => res.status(200).send ({
-    message: 'Parece que funciona! wiii!!',
-})); */
-
 //lista todos los propietarios
-router.get('/list', transactions.list);
+router.get('/list', [validateJasonWebToken], transactions.list);
+
 //buscar por propietarios
-router.get('/find/:car_id', transactions.find);
+router.get('/find/:car_id', [validateJasonWebToken], transactions.find);
+
 //crear nuevo registro
-router.post('/new', [
+router.post('/new', [validateJasonWebToken,
     check('car', 'El auto es obligatoria').not().isEmpty(),
     check('owner', 'El propietario es obligatorio').not().isEmpty(),
     check('service', 'El servicio es obligatorio').not().isEmpty(),

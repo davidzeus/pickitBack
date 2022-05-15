@@ -24,10 +24,8 @@ Gonzalez Cristian David
 
 ## Modo de uso
 
-#######################################################
-####### TODAS LAS PETICIONES NECESITAN TOKEN EN HEADERS.
-####### KEY = miclaveultrasecreta123*
-#######################################################
+######### TODAS LAS PETICIONES NECESITAN TOKEN EN HEADERS. 
+## TOKEN = miclaveultrasecreta123*
 
 
 # Autos

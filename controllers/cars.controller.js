@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const cars = require('../models').cars;
+
 module.exports = {
   //crea nuevo registro
   create(req, res) {
@@ -36,9 +37,9 @@ module.exports = {
   //lista todos los registros
   list(_, res) {
     return cars.findAll({})
-      .then((cars) => res.status(200).send(cars))
-      .catch(error => res.status(400).send(error))
-  },
+        .then(cars => res.status(200).send(cars))
+        .catch(error => res.status(400).send(error))
+},
 
   //bucar un registro por marca
   find(req, res) {
@@ -53,13 +54,12 @@ module.exports = {
 
   //elimina un auto
   delete(req, res) {
-    console.log('entro a la funcion')
     return cars.destroy({
       where: {
-        id: req.params.id 
+        id: req.params.id
       }
     })
-      .then(models => res.status(200).send({msj: 'registro eliminado'}))
+      .then(models => res.status(200).send({ msj: 'registro eliminado' }))
       .catch(error => res.status(400).send(error))
   },
 };

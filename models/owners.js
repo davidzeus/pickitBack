@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      owners.belongsTo(models.cars,
+        {
+          foreignKey: {
+            name: 'id',
+            allowNull: true,
+          }
+        })
     }
   }
   owners.init({

@@ -11,7 +11,8 @@ class Server {
         this.paths = {
             cars: '/api/cars',
             owners: '/api/owner',
-            transactions: '/api/transactions'
+            transactions: '/api/transactions',
+            carsOwner: '/api/carsOwner'
         }
 
         //Database
@@ -39,6 +40,7 @@ class Server {
         this.app.use(this.paths.cars, require('../routes/cars.routes'));
         this.app.use(this.paths.owners, require('../routes/owner.routes'));
         this.app.use(this.paths.transactions, require('../routes/transactions.routes'));
+        this.app.use(this.paths.carsOwner, require('../routes/carsOwner.routes'));
     }
 
     listen() {

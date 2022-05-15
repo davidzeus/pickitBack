@@ -2,35 +2,33 @@
 
 BackEnd para Pickit.
 
-## Getting Started
-
-### Dependencies
+### Dependencias
 
 * Node v16.13
 * MySQL 
 
-### Installing
+### Instalar dependencias
 
 * npm install
 
-### Executing program
+### Ejecutar
 
 * How to run the program
 ```
 npm run start:dev
 ```
 
-## Authors
+## Autor
 
 Gonzalez Cristian David
 
-## Using
+## Modo de uso
 
 # Autos
-* [listar autos](#listar-Autos)
+* [listar vehiculos](#listar-Autos)
 * [Buscar por marca](#buscar-por-marca)
-* [crear nuevo auto](#nuevo-auto)
-* [editar auto](#editar-auto)
+* [crear nuevo vehiculos](#nuevo-auto)
+* [editar vehiculos](#editar-auto)
 
 # Propietarios
 * [listar propietarios](#listar-propietarios)
@@ -43,6 +41,12 @@ Gonzalez Cristian David
 * [Buscar por id de propietario](#buscar-por-propietario)
 * [registrar nuevo servicio](#nuevo-servicio)
 
+# Autos - propietario
+* [listar todos los vehiculos con sus respectivos propietarios](#listar-todos-los-autos-con-su-respectivo-propietario)
+* [Obtener vehiculo con su respectivo propietario](#Obtener-vehiculo-con-su-respectivo-propietario)
+
+
+## Metodos
 
 ### listar Autos
 - uri: /api/cars/list
@@ -460,6 +464,104 @@ Gonzalez Cristian David
     "updatedAt": "2022-05-13T18:59:35.057Z",
     "createdAt": "2022-05-13T18:59:35.057Z"
 }
+```
+### listar todos los autos con su respectivo propietario
+- uri: /api/carsOwner/list
+- method: `'GET'`
+
+- response:
+```json
+[
+    {
+        "id": 1,
+        "car": {
+            "id": 5,
+            "manufacturer": "fiat",
+            "models": "argo",
+            "color": "gris",
+            "year": 2021,
+            "registration": "ae578sa"
+        },
+        "owner": {
+            "id": 3,
+            "lastName": "Ramirez",
+            "name": "Maria"
+        }
+    },
+    {
+        "id": 2,
+        "car": {
+            "id": 4,
+            "manufacturer": "nissan",
+            "models": "frontier",
+            "color": "gris",
+            "year": 2017,
+            "registration": "ac945ky"
+        },
+        "owner": {
+            "id": 3,
+            "lastName": "Ramirez",
+            "name": "Maria"
+        }
+    },
+    {
+        "id": 3,
+        "car": {
+            "id": 2,
+            "manufacturer": "ford",
+            "models": "f-100",
+            "color": "azul",
+            "year": 1950,
+            "registration": "dre745"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        }
+    },
+    {
+        "id": 4,
+        "car": {
+            "id": 1,
+            "manufacturer": "ford",
+            "models": "falcon",
+            "color": "rojo",
+            "year": 1971,
+            "registration": "dfw154"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        }
+    }
+]
+```
+### buscar por marca
+- uri: /api/carsOwner/find/:idCar
+- method: `'GET'`
+
+- response:
+```json
+[
+    {
+        "id": 3,
+        "car": {
+            "id": 2,
+            "manufacturer": "ford",
+            "models": "f-100",
+            "color": "azul",
+            "year": 1950,
+            "registration": "dre745"
+        },
+        "owner": {
+            "id": 1,
+            "lastName": "Gonzalez",
+            "name": "Cristian"
+        }
+    }
+]
 ```
 
 

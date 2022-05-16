@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "pickit",
+    "password": "pickit",
+    "database": "pickit",
+    "host": "10.10.17.81",
+    "port": 3306,
+    "dialect": "mysql"
+  }
+}
